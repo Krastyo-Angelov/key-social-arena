@@ -4,19 +4,17 @@ import {
 	Navigate,
 	RouterProvider,
 } from 'react-router-dom';
-import { Home } from './pages/home/Home';
-import { Register } from './pages/register/Register';
+import { Home } from './components/pages/home/Home';
+import { Register } from './components/pages/register/Register';
 import { PathConstants } from './constants/path-constants';
 import { Layout } from './components/layout/Layout';
-import { Error } from './pages/error/Error';
-import { ReactNode, useState } from 'react';
+import { Error } from './components/pages/error/Error';
+import { ReactNode } from 'react';
 
 export default function App() {
-	const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-
 	const ProtectedRoute = ({ children }: { children: ReactNode }) => {
 		// If there user is not logged in
-		if (!isLoggedIn) {
+		if (true) {
 			return <Navigate to={PathConstants.REGISTER} />;
 		}
 
